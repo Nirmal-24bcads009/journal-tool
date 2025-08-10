@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Journal Submission Formatter - Web Design Subject</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docx@7.8.2/build/index.js"></script>
+    
+    <!-- Your Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛠️ Journal Submission Formatter</h1>
+            <p>Web Design Subject - Automated Journal Layout Generator</p>
+        </div>
+        <div class="form-container">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="studentId">👤 Student ID</label>
+                    <input type="text" id="studentId" list="studentIdList" required placeholder="Type or select a Student ID">
+                    <datalist id="studentIdList"></datalist>
+                </div>
+                <div class="form-group">
+                    <label for="studentName">📝 Student Name</label>
+                    <input type="text" id="studentName" placeholder="Student's Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="journalNumber">📋 Journal Number</label>
+                    <select id="journalNumber" required>
+                        <option value="">Select Journal Number</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="questionSelect">❓ Question</label>
+                    <select id="questionSelect" required disabled>
+                        <option value="">Select a journal first</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="dynamic-uploads-container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <label>📝 File Uploads</label>
+                    <button id="addFileBtn" class="add-file-btn" type="button" title="Add another file pair">+</button>
+                </div>
+                <p class="form-description" style="text-align: left; margin-top: 0; margin-bottom: 1.5rem;">
+                    Upload your code file (.html/.css) and its corresponding output screenshot. The screenshot is optional. Click the '<strong>+</strong>' button to add fields for another file.
+                </p>
+                <div id="fileUploadsArea"></div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-primary" id="generateBtn" disabled>✨ Generate Journal Preview</button>
+            </div>
+            <p class="form-description">
+                After filling in your details and uploading files, click this button to create a preview of your journal page right here.
+            </p>
+
+            <div id="previewContainer" class="preview-container" style="display: none;">
+                <div class="preview-header">👁️ Journal Preview</div>
+                <div id="journalPreview" class="journal-preview"></div>
+                <div class="btn-group">
+                    <button class="btn btn-word" id="downloadWordBtn" disabled>
+                        Download as Word
+                    </button>
+                    <button class="btn btn-pdf" id="downloadPdfBtn" disabled>
+                        Download as PDF
+                    </button>
+                    <button class="btn btn-secondary" id="orderPrintBtn" disabled>
+                        Order a Printout
+                    </button>
+                </div>
+                <p class="form-description">
+                    Download your formatted journal as a <strong>Word (.docx)</strong> file for further editing, or as a <strong>PDF</strong> for easy printing and final submission.
+                </p>
+            </div>
+
+            <div id="errorContainer"></div>
+            <div id="statusContainer"></div>
+        </div>
+    </div>
+
+    <!-- Your JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
