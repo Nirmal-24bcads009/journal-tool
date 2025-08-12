@@ -24,13 +24,12 @@ function unescapeHtml(html) {
     return textArea.value;
 }
 
-// NEW: This function finds and replaces non-standard characters that cause rendering issues.
 function normalizeText(text) {
     if (typeof text !== 'string') return text;
     return text
-        .replace(/\u2011/g, '-') // Replace Non-Breaking Hyphen with standard hyphen
-        .replace(/\u2013/g, '-') // Replace En Dash with standard hyphen
-        .replace(/\u202F/g, ' '); // Replace Narrow No-Break Space with standard space
+        .replace(/\u2011/g, '-') // Replace Non-Breaking Hyphen
+        .replace(/\u2013/g, '-') // Replace En Dash
+        .replace(/\u202F/g, ' '); // Replace Narrow No-Break Space
 }
 
 function formatCodeForDownload(text) {
@@ -81,7 +80,7 @@ function dataURLToBlob(dataURL) {
 }
 
 const studentsData = [
-    { id: '24BCADS001', name: 'ADGADE HARSHADA' }, { id: '24BCADS002', name: 'AHIR DIYA' }, { id: '24BCADS003', name: 'BHAKHATIYARPURE SAHIL' }, { id: '24BCADS005', name: 'CHANDOLE DARSHAN' }, { id: '24BCADS006', name: 'CHAUDHARI CHIRAG' }, { id: '24BCADS007', name: 'CHAUDHARI MARMIKKUMAR' }, { id: '24BCADS008', name: 'CHAUDHARI NAITIK' }, { id: '24BCADS009', name: 'CHAUDHARI NIRMALBHAI' }, { id: '24BCADS010', name: 'CHAUDHARI SONU' }, { id: '24BCADS011', name: 'CHAUDHARI VANSH' }, { id: '24BCADS012', name: 'CHAUDHARI YASHKUMAR' }, { id: '24BCADS013', name: 'CHAUHAN BHAKTI' }, { id: '24BCADS014', name: 'CHAUHAN BHUMIBEN' }, { id: '24BCADS015', name: 'CHAUHAN NIKUNJBHAI' }, { id: '24BCADS016', name: 'CHAUHAN PARTH' }, { id: '24BCADS017', name: 'DALAL PRATHAM' }, { id: '24BCADS018', name: 'DAS PURNIMA' }, { id: '24BCADS022', name: 'DESAI POORVABEN' }, { id: '24BCADS023', name: 'DHANGAR JAYKUMAR' }, { id: '24BCADS024', name: 'DHARIWAL AAKANSHA' }, { id: '24BCADS025', name: 'DHIMMAR MAHI' }, { id: '24BCADS026', name: 'DHOLE NEHA' }, { id: '24BCADS027', name: 'DOBARIYA YASHVI' }, { id: '24BCADS028', name: 'DOSHI PARTHKUMAR' }, { id: '24BCADS029', name: 'GAMIT TEJAS' }, { id: '24BCADS030', name: 'GANDHI KRISHNA' }, { id: '24BCADS031', name: 'GARASHIYA ANKUR' }, { id: '24BCADS032', name: 'GAUN MITKUMAR' }, { id: '24BCADS033', name: 'GHODASARA JENI' }, { id: '24BCADS034', name: 'HALPATI NILKUMAR' }, { id: '24BCADS035', name: 'JADAV ROHAN' }, { id: '24BCADS036', name: 'KAKULIT DOYAL' }, { id: '24BCADS037', name: 'KALAL YASH' }, { id: '24BCADS038', name: 'KANTHARIYA SAHILKUMAR' }, { id: '24BCADS039', name: 'MOHMAD AAKIL' }, { id: '24BCADS040', name: 'KEVAT MEHULBHAI' }, { id: '24BCADS041', name: 'LAKHARA HIMANSHU' }, { id: '24BCADS042', name: 'MACHHI KEVINKUMAR' }, { id: '24BCADS043', name: 'MAHYAVANSHI DHRUVKUMAR' }, { id: '24BCADS044', name: 'MAISURIYA DIYA' }, { id: '24BCADS045', name: 'MAJHI SUMITKUMAR' }, { id: '24BCADS046', name: 'MAYHAVANSHI VIVEK' }, { id: '24BCADS047', name: 'MEGHAT SHREYA' }, { id: '24BCADS048', name: 'MEMAN ABDULRAHMAN' }, { id: '24BCADS049', name: 'MISTRY DARSHANKUMAR' }, { id: '24BCADS050', name: 'MISTRY JAY' }, { id: '24BCADS051', name: 'MISTRY NENCY' }, { id: '24BCADS052', name: 'MISTRY RUSHIKUMAR' }, { id: '24BCADS053', name: 'MISTRY SHUCHI' }, { id: '24BCADS054', name: 'MISTRY SNEHA' }, { id: '24BCADS055', name: 'MISTRY TISHA' }, { id: '24BCADS056', name: 'MORI DHRUVILKUMAR' }, { id: '24BCADS057', name: 'MULTANI RUMANA' }, { id: '24BCADS058', name: 'MULTANI SANIYA' }, { id: '24BCADS059', name: 'PAGHADAL JIGARKUMAR' }, { id: '24BCADS060', name: 'PANCHAL BHUMI' }, { id: '24BCADS061', name: 'PANCHAL DIYA' }, { id: '24BCADS062', name: 'PANCHAL FENI' }, { id: '24BCADS063', name: 'PANCHAL HENI' }, { id: '24BCADS064', name: 'PANCHAL MEET' }, { id: '24BCADS065', name: 'PANCHAL POOJA' }, { id: '24BCADS066', name: 'PANCHAL RUDRAKUMAR' }, { id: '24BCADS067', name: 'PANCHAL SHIVAM' }, { id: '24BCADS068', name: 'PANCHAL SHRUTIBEN' }, { id: '24BCADS069', name: 'PANCHAL STUTY' }, { id: '24BCADS070', name: 'PANCHOLI HET' }, { id: '24BCADS071', name: 'PATANVADIYA RIYABEN' }, { id: '24BCADS072', name: 'PATEL AMI' }, { id: '24BCADS073', name: 'PATEL ARCHI' }, { id: '24BCADS074', name: 'PATEL BHUMI' }, { id: '24BCADS075', name: 'PATEL DAX' }, { id: '24BCADS076', name: 'PATEL DARSHAN' }, { id: '24BCADS077', name: 'PATEL DEVANSHIKUMARI' }, { id: '24BCADS078', name: 'PATEL DEVANSHU' }, { id: '24BCADS079', name: 'PATEL DHRUVI' }, { id: '24BCADS080', name: 'PATEL FENIL' }, { id: '24BCADS081', name: 'PATEL HENIL' }, { id: '24BCADS084', 'name': 'PATEL KASHISH' }, { id: '24BCADS085', name: 'PATEL KHUSHI' }
+    { id: '24BCADS001', name: 'ADGADE HARSHADA' }, { id: '24BCADS002', name: 'AHIR DIYA' }, { id: '24BCADS003', name: 'BHAKHATIYARPURE SAHIL' }, { id: '24BCADS005', name: 'CHANDOLE DARSHAN' }, { id: '24BCADS006', name: 'CHAUDHARI CHIRAG' }, { id: '24BCADS007', name: 'CHAUDHARI MARMIKKUMAR' }, { id: '24BCADS008', name: 'CHAUDHARI NAITIK' }, { id: '24BCADS009', name: 'CHAUDHARI NIRMALBHAI' }, { id: '24BCADS010', name: 'CHAUDHARI SONU' }, { id: '24BCADS011', name: 'CHAUDHARI VANSH' }, { id: '24BCADS012', name: 'CHAUDHARI YASHKUMAR' }, { id: '24BCADS013', name: 'CHAUHAN BHAKTI' }, { id: '24BCADS014', name: 'CHAUHAN BHUMIBEN' }, { id: '24BCADS015', name: 'CHAUHAN NIKUNJBHAI' }, { id: '24BCADS016', name: 'CHAUHAN PARTH' }, { id: '24BCADS017', name: 'DALAL PRATHAM' }, { id: '24BCADS018', name: 'DAS PURNIMA' }, { id: '24BCADS022', name: 'DESAI POORVABEN' }, { id: '24BCADS023', name: 'DHANGAR JAYKUMAR' }, { id: '24BCADS024', name: 'DHARIWAL AAKANSHA' }, { id: '24BCADS025', name: 'DHIMMAR MAHI' }, { id: '24BCADS026', name: 'DHOLE NEHA' }, { id: '24BCADS027', name: 'DOBARIYA YASHVI' }, { id: '24BCADS028', name: 'DOSHI PARTHKUMAR' }, { id: '24BCADS029', name: 'GAMIT TEJAS' }, { id: '24BCADS030', name: 'GANDHI KRISHNA' }, { id: '24BCADS031', name: 'GARASHIYA ANKUR' }, { id: '24BCADS032', name: 'GAUN MITKUMAR' }, { id: '24BCADS033', name: 'GHODASARA JENI' }, { id: '24BCADS034', name: 'HALPATI NILKUMAR' }, { id: '24BCADS035', name: 'JADAV ROHAN' }, { id: '24BCADS036', name: 'KAKULIT DOYAL' }, { id: '24BCADS037', name: 'KALAL YASH' }, { id: '24BCADS038', name: 'KANTHARIYA SAHILKUMAR' }, { id: '24BCADS039', name: 'MOHMAD AAKIL' }, { id: '24BCADS040', name: 'KEVAT MEHULBHAI' }, { id: '24BCADS041', name: 'LAKHARA HIMANSHU' }, { id: '24BCADS042', name: 'MACHHI KEVINKUMAR' }, { id: '24BCADS043', name: 'MAHYAVANSHI DHRUVKUMAR' }, { id: '24BCADS044', name: 'MAISURIYA DIYA' }, { id: '24BCADS045', name: 'MAJHI SUMITKUMAR' }, { id: '24BCADS046', name: 'MAYHAVANSHI VIVEK' }, { id: '24BCADS047', name: 'MEGHAT SHREYA' }, { id: '24BCADS048', name: 'MEMAN ABDULRAHMAN' }, { id: '24BCADS049', name: 'MISTRY DARSHANKUMAR' }, { id: '24BCADS050', name: 'MISTRY JAY' }, { id: '24BCADS051', name: 'MISTRY NENCY' }, { id: '24BCADS052', name: 'MISTRY RUSHIKUMAR' }, { id: '24BCADS053', name: 'MISTRY SHUCHI' }, { id: '24BCADS054', name: 'MISTRY SNEHA' }, { id: '24BCADS055', name: 'MISTRY TISHA' }, { id: '24BCADS056', name: 'MORI DHRUVILKUMAR' }, { id: '24BCADS057', name: 'MULTANI RUMANA' }, { id: '24BCADS058', name: 'MULTANI SANIYA' }, { id: '24BCADS059', name: 'PAGHADAL JIGARKUMAR' }, { id: '24BCADS060', name: 'PANCHAL BHUMI' }, { id: '24BCADS061', name: 'PANCHAL DIYA' }, { id: '24BCADS062', name: 'PANCHAL FENI' }, { id: '24BCADS063', name: 'PANCHAL HENI' }, { id: '24BCADS064', name: 'PANCHAL MEET' }, { id: '24BCADS065', name: 'PANCHAL POOJA' }, { id: '24BCADS066', name: 'PANCHAL RUDRAKUMAR' }, { id: '24BCADS067', name: 'PANCHAL SHIVAM' }, { id: '24BCADS068', name: 'PANCHAL SHRUTIBEN' }, { id: '24BCADS069', name: 'PANCHAL STUTY' }, { id: '24BCADS070', name: 'PANCHOLI HET' }, { id: '24BCADS071', 'name': 'PATANVADIYA RIYABEN' }, { id: '24BCADS072', name: 'PATEL AMI' }, { id: '24BCADS073', name: 'PATEL ARCHI' }, { id: '24BCADS074', name: 'PATEL BHUMI' }, { id: '24BCADS075', name: 'PATEL DAX' }, { id: '24BCADS076', name: 'PATEL DARSHAN' }, { id: '24BCADS077', name: 'PATEL DEVANSHIKUMARI' }, { id: '24BCADS078', name: 'PATEL DEVANSHU' }, { id: '24BCADS079', name: 'PATEL DHRUVI' }, { id: '24BCADS080', name: 'PATEL FENIL' }, { id: '24BCADS081', name: 'PATEL HENIL' }, { id: '24BCADS084', 'name': 'PATEL KASHISH' }, { id: '24BCADS085', name: 'PATEL KHUSHI' }
 ];
 
 const questionsData = [
@@ -105,6 +104,7 @@ const generateBtn = document.getElementById('generateBtn');
 const downloadWordBtn = document.getElementById('downloadWordBtn');
 const downloadPdfBtn = document.getElementById('downloadPdfBtn');
 const orderPrintBtn = document.getElementById('orderPrintBtn');
+const nextQuestionBtn = document.getElementById('nextQuestionBtn');
 const journalPreviewDiv = document.getElementById('journalPreview');
 const previewContainer = document.getElementById('previewContainer');
 const addCodeBtn = document.getElementById('addCodeBtn');
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     populateStudentDatalist();
     populateJournalNumbers();
-    addUploader('code');
+    addUploader('code', false); // Add initial uploader without opening file dialog
 });
 
 function setupEventListeners() {
@@ -125,11 +125,12 @@ function setupEventListeners() {
     studentNameInput.addEventListener('input', checkFormValidity);
     journalNumberSelect.addEventListener('change', handleJournalNumberChange);
     questionSelect.addEventListener('change', checkFormValidity);
-    addCodeBtn.addEventListener('click', () => addUploader('code'));
-    addPictureBtn.addEventListener('click', () => addUploader('image'));
+    addCodeBtn.addEventListener('click', () => addUploader('code', true));
+    addPictureBtn.addEventListener('click', () => addUploader('image', true));
     generateBtn.addEventListener('click', generatePreview);
     downloadWordBtn.addEventListener('click', downloadWord);
     downloadPdfBtn.addEventListener('click', downloadPdf);
+    nextQuestionBtn.addEventListener('click', handleNextQuestion);
     orderPrintBtn.addEventListener('click', () => {
         alert('Please download the PDF and use your system\'s print function.');
     });
@@ -179,7 +180,7 @@ function handleJournalNumberChange(event) {
     checkFormValidity();
 }
 
-function addUploader(type) {
+function addUploader(type, openDialog = false) {
     const uploadId = uploadCounter++;
     const itemDiv = document.createElement('div');
     itemDiv.classList.add('upload-item');
@@ -190,6 +191,7 @@ function addUploader(type) {
     const acceptAttr = type === 'code' ? 'text/html,.html,text/css,.css' : 'image/*';
 
     itemDiv.innerHTML = `
+        <button class="delete-upload-btn" title="Remove file">&times;</button>
         <div class="upload-icon">${icon}</div>
         <div class="upload-text">${text}</div>
         <input type="file" id="fileInput-${uploadId}" class="file-input" accept="${acceptAttr}">
@@ -197,6 +199,12 @@ function addUploader(type) {
     fileUploadsArea.appendChild(itemDiv);
     
     const fileInput = document.getElementById(`fileInput-${uploadId}`);
+    const deleteBtn = itemDiv.querySelector('.delete-upload-btn');
+
+    deleteBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent file dialog from opening
+        deleteUpload(uploadId);
+    });
 
     itemDiv.addEventListener('click', () => fileInput.click());
     
@@ -219,9 +227,24 @@ function addUploader(type) {
     fileInput.addEventListener('change', (event) => {
         handleFileUpload(event, type, uploadId);
     });
+
+    if (openDialog) {
+        fileInput.click();
+    }
 }
 
-// MODIFIED: This function now normalizes the text as soon as it's loaded.
+function deleteUpload(uploadId) {
+    const itemDiv = document.getElementById(`upload-item-${uploadId}`);
+    if (itemDiv) {
+        itemDiv.remove();
+    }
+    const uploadIndex = uploads.findIndex(u => u.id === uploadId);
+    if (uploadIndex > -1) {
+        uploads.splice(uploadIndex, 1);
+    }
+    checkFormValidity();
+}
+
 function handleFileUpload(event, type, uploadId) {
     const file = event.target.files[0];
     const itemDiv = document.getElementById(`upload-item-${uploadId}`);
@@ -230,7 +253,7 @@ function handleFileUpload(event, type, uploadId) {
     if (file && itemDiv && uploadTextDiv) {
         const reader = new FileReader();
         reader.onload = e => {
-            const normalizedContent = normalizeText(e.target.result); // Sanitize content on load
+            const normalizedContent = normalizeText(e.target.result);
             const fileData = { name: file.name, content: normalizedContent, type: file.type };
             
             const existingUploadIndex = uploads.findIndex(u => u.id === uploadId);
@@ -254,11 +277,15 @@ function handleFileUpload(event, type, uploadId) {
 
 function checkFormValidity() {
     const hasCodeFile = uploads.some(u => u.type === 'code' && u.file);
-    const isValid = studentIdInput.value.trim() && studentNameInput.value.trim() && journalNumberSelect.value && questionSelect.value && hasCodeFile;
-    
-    generateBtn.disabled = !isValid;
+    const isGenerateValid = studentIdInput.value.trim() && studentNameInput.value.trim() && journalNumberSelect.value && questionSelect.value && hasCodeFile;
+    generateBtn.disabled = !isGenerateValid;
 
-    if (!isValid) {
+    const isQuestionSelected = questionSelect.value && questionSelect.selectedIndex > 0;
+    const isNotLastQuestion = questionSelect.selectedIndex < questionSelect.options.length - 1;
+    const isPreviewVisible = previewContainer.style.display === 'block';
+    nextQuestionBtn.disabled = !(isQuestionSelected && isNotLastQuestion && isPreviewVisible);
+
+    if (!isGenerateValid) {
         previewContainer.style.display = 'none';
         downloadWordBtn.disabled = true;
         downloadPdfBtn.disabled = true;
@@ -295,7 +322,38 @@ function generatePreview() {
     downloadWordBtn.disabled = false;
     downloadPdfBtn.disabled = false;
     orderPrintBtn.disabled = false;
+    
+    checkFormValidity();
+    
     previewContainer.scrollIntoView({ behavior: 'smooth' });
+}
+
+function resetForNextQuestion() {
+    uploads = [];
+    uploadCounter = 0;
+    fileUploadsArea.innerHTML = '';
+    addUploader('code', false);
+
+    previewContainer.style.display = 'none';
+    downloadWordBtn.disabled = true;
+    downloadPdfBtn.disabled = true;
+    orderPrintBtn.disabled = true;
+    
+    clearMessages();
+    checkFormValidity();
+}
+
+function handleNextQuestion() {
+    const currentIndex = questionSelect.selectedIndex;
+    const totalOptions = questionSelect.options.length;
+
+    if (currentIndex > 0 && (currentIndex + 1) < totalOptions) {
+        questionSelect.selectedIndex = currentIndex + 1;
+        questionSelect.dispatchEvent(new Event('change'));
+        resetForNextQuestion();
+    } else {
+        alert("You've reached the last question for this journal.");
+    }
 }
 
 async function downloadWord() {

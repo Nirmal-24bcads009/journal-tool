@@ -5,25 +5,40 @@
     box-sizing: border-box; 
 }
 
-/* Body Styling */
+/* Body Styling with Flowfest-inspired animated gradient */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f0f2f5; /* A neutral, light grey background */
     color: #333;
     padding: 20px;
     display: flex;
     justify-content: center;
+    
+    background: linear-gradient(125deg, #ff00a8, #00c2ff, #ff8a00, #e500ff);
+    background-size: 400% 400%;
+    animation: gradientFlow 20s ease infinite;
 }
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 .page-container {
     width: 100%;
-    max-width: 900px; /* Approx width of a document */
+    max-width: 900px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* The main document editor container */
 .document-editor {
     background: #fff;
     padding: 0.75in;
@@ -47,7 +62,6 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Styling for inputs and selects to look like part of the document */
 .doc-input {
     font-family: 'Times New Roman', serif;
     font-size: 14pt;
@@ -66,8 +80,6 @@ body {
 #studentName { text-align: right; flex: 1; }
 #questionSelect { width: 100%; font-weight: bold; }
 
-
-/* Content Area for File Uploads */
 .document-content-area .content-header {
     margin-bottom: 0.5rem;
 }
@@ -79,8 +91,8 @@ body {
     text-align: center;
 }
 
-/* Styling for the uploader box */
 .upload-item {
+    position: relative;
     border: 2px dashed #ccc;
     border-radius: 8px;
     padding: 2rem;
@@ -124,8 +136,34 @@ body {
     font-weight: bold;
 }
 
+.delete-upload-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    background-color: #e0e0e0;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
 
-/* Add controls container */
+.delete-upload-btn:hover {
+    background-color: #dc3545;
+    color: #fff;
+    border-color: #bd2130;
+    transform: scale(1.1);
+}
+
 .add-controls-container {
     margin-top: 1.5rem;
     display: flex;
@@ -133,14 +171,12 @@ body {
     justify-content: flex-end;
 }
 
-/* Controls Area below the document */
 .controls-area {
-    margin-top: 2rem;
+    padding-top: 2rem;
     width: 100%;
     text-align: center;
 }
 
-/* Button Styling */
 .btn-group { 
     display: flex; 
     gap: 1rem; 
@@ -172,13 +208,14 @@ body {
     cursor: not-allowed;
     transform: none !important;
     box-shadow: none;
-    background-color: #ccc;
+    background-color: #ccc !important;
 }
 
 .btn-primary { background-color: #007bff; }
 .btn-word { background-color: #2b579a; }
 .btn-pdf { background-color: #d93025; }
 .btn-secondary { background-color: #6c757d; }
+.btn-success { background-color: #28a745; }
 
 .btn-subtle {
     background-color: #f8f9fa;
@@ -196,8 +233,6 @@ body {
     box-shadow: none;
 }
 
-
-/* Preview Container */
 .preview-container { 
     margin-top: 2rem; 
     padding: 2rem; 
@@ -208,7 +243,6 @@ body {
 }
 .preview-header { font-size: 1.2rem; text-align: center; margin-bottom: 1rem; font-family: Arial, sans-serif; }
 
-/* THE PREVIEW ITSELF - Styled to look like the editor */
 .journal-preview {
     background: #fff;
     padding: 0.75in;
@@ -234,7 +268,6 @@ body {
     text-align: left;
     word-wrap: break-word;
 }
-/* NEW: Explicitly set font for PRE tag to override browser defaults */
 .journal-code pre {
     font-family: 'Times New Roman', serif;
     font-size: 12pt;
@@ -246,7 +279,6 @@ body {
 .journal-output-label { font-weight: 700; margin-bottom: 1rem; font-size: 14pt; }
 .journal-output img { max-width: 100%; height: auto; border: 1px solid #000; margin-top: 0.5rem; }
 
-/* Status and Error Messages */
 .error-message, .status-message {
     font-family: Arial, sans-serif;
     padding: 1rem; 
@@ -258,7 +290,6 @@ body {
 .error-message { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
 .status-message { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
 
-/* Responsive Adjustments */
 @media (max-width: 900px) {
     .document-editor, .preview-container {
         padding: 0.25in;
